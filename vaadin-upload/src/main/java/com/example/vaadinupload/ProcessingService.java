@@ -45,7 +45,7 @@ public class ProcessingService {
                 messageDigest.update(bytes,0,dataRead);
                 acum += dataRead;
                 float per = (acum/(float)largo);
-                System.out.println("percentaje: "+per+"%");
+                System.out.println("percentage: "+per+"%");
                 progressListener.accept(per);
             }
             final byte[] bytesDigest = messageDigest.digest();
