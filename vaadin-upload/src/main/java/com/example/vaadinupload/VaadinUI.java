@@ -66,17 +66,12 @@ public class VaadinUI extends UI implements Upload.Receiver, Upload.SucceededLis
         progressBar.setVisible(true);
         BufferedOutputStream bufferedOutputStream = null;
         file = new File("/tmp/",s);
-        if(!file.exists()) {
             try {
                 bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
             }catch (IOException ex) {
                 Notification.show("Not found "+file.getName());
+                return null;
             }
-        }
-        try {
-            bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
-        } catch (FileNotFoundException e) {
-            
         }
         return bufferedOutputStream;
     }
